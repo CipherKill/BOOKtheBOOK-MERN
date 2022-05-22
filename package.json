@@ -1,0 +1,26 @@
+{
+  "name": "bookthebook",
+  "version": "1.0.0",
+  "description": "A website for books",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CipherKill/BOOKtheBOOK-MERN.git"
+  },
+  "keywords": [
+    "MERN"
+  ],
+  "author": "Alan Raju",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CipherKill/BOOKtheBOOK-MERN/issues"
+  },
+  "homepage": "https://github.com/CipherKill/BOOKtheBOOK-MERN#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
