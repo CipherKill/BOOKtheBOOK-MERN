@@ -2,8 +2,8 @@ const mongoose=require('mongoose');
 
 const connectDB=async ()=>{
     try{
-        const conn=await mongoose.connect(process.env.MONGOOSE_URI);
-        console.log(`MongoDB Connected: ${conn.connectin.host}`.cyan.underline);
+        const conn=await mongoose.connect(process.env.MONGO_URI);
+        console.log(`MongoDB Connected: ${conn.connection.host}`.cyan.underline);
     }
     catch(error){
         console.log(`Error: ${error.message}`.red.underline.bold);
@@ -12,3 +12,5 @@ const connectDB=async ()=>{
 };
 
 module.exports=connectDB;
+
+
