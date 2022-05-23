@@ -16,3 +16,14 @@
     padding:0.8rem;
     border-radius:1rem;
 }
+
+.logout-btn{
+    background-color:black;
+    padding:0.5rem 1rem !important;
+    border-radius:1rem;
+}
+
+.logout-btn:hover{
+    background-color:grey;
+    color:black;
+}

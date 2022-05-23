@@ -1,9 +1,11 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import {Container,Form,Button} from 'react-bootstrap'
 import {FaSignInAlt} from 'react-icons/fa'
 import {toast} from 'react-toastify'
 import {useSelector,useDispatch} from 'react-redux'
-import {login} from '../features/auth/authSlice'
+import {login,reset} from '../features/auth/authSlice'
+import {useNavigate} from 'react-router-dom'
+import Spinner from '../assets/loading.gif'
 
 function Login() {
     const [formData,setFormData]=useState({
@@ -13,8 +15,19 @@ function Login() {
 
     const {email,password}=formData;
 
+    const navigate=useNavigate();
     const dispatch=useDispatch();
-    const {user,isLoading,isSuccess,message}=useSelector(state=>state.auth);
+    const {user,isLoading,isSuccess,isError,message}=useSelector(state=>state.auth);
+
+    useEffect(()=>{
+        if(isError){
+            toast.error(message);
+        }
+        if(isSuccess||user){
+            navigate('/');
+        }
+        dispatch(reset())
+    },[isError,isSuccess,user,message,navigate,dispatch]);
 
     //really cool function
     const onChange=(e)=>{
