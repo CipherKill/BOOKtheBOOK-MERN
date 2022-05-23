@@ -4,6 +4,7 @@ import Register from './pages/Register'
 import Login from './pages/Login'
 import Home from './pages/Home'
 import Header from './components/Header'
+import PrimaryMenu from './components/PrimaryMenu'
 
 import 'react-toastify/dist/ReactToastify.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -12,19 +13,18 @@ import './App.css'
 
 function App() {
   return (
-    <>
     <BrowserRouter>
-      <div className='container'>
+      <div className='pagestuff'>
         <Header/>
+        <PrimaryMenu/>
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/register' element={<Register/>}/>
           <Route path='/login' element={<Login/>}/>
         </Routes>
       </div>
+      <ToastContainer/>
     </BrowserRouter>
-    <ToastContainer/>
-    </>
   );
 }
 

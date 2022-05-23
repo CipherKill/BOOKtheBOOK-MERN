@@ -1,7 +1,10 @@
+import CarousalBooks from '../components/CarousalBooks'
 
 function Home() {
   return (
-    <div>Home</div>
+    <>
+        <CarousalBooks/>
+    </>
   )
 }
 
