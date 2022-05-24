@@ -1,3 +1,6 @@
+body{
+    background-color:lightgray;
+}
 
 .router-link{
     text-decoration:none;
@@ -49,4 +52,23 @@
 
 .mybook-title{
     border-bottom:3px solid black;
+}
+
+.scale-image{
+    transform:scale(0.5);
+    margin-top:-18rem;
+    margin-bottom:-25rem;
+}
+
+.s-carousal{
+    background-color:lightgrey;
+}
+
+.pop{
+    margin-bottom:-4rem;
+}
+
+.smenu{
+    font-size:1.5rem;
+    text-transform:uppercase;
 }

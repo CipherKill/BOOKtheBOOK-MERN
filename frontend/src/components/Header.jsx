@@ -18,10 +18,10 @@ function Header() {
   return (
         <Navbar bg='light' variant='light'>
             <Container fluid>
-                <Navbar.Brand><Link to='/'className='router-link text-black hovermode1'>BOOKtheBOOK</Link></Navbar.Brand>
+                <Navbar.Brand><Link to='/'className='router-link text-black hovermode1 ms-5'>BOOKtheBOOK</Link></Navbar.Brand>
                 <Nav className='ms-auto'>
                     {user?(
-                        <Nav.Link className='logout-btn text-white' onClick={onLogout}><FaSignOutAlt/> Logout</Nav.Link>
+                        <Nav.Link className='logout-btn text-white me-5' onClick={onLogout}><FaSignOutAlt/> Logout</Nav.Link>
                     ):(
                     <>
                     <Nav.Link><Link to='/login' className='router-link text-black hovermode1'><FaSignInAlt/> Login</Link></Nav.Link>

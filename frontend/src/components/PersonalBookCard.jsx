@@ -1,18 +1,16 @@
 import {Card,Button} from 'react-bootstrap'
 import {useState} from 'react'
-import {useNavigate} from 'react-router-dom'
 
 function BookCard({cover,name,author,genre,rating,bookid}) {
 
     const [displayCard,setDisplayCard]=useState(true)
-    const navigate=useNavigate()
 
   const handleClick=(e)=>{
     setDisplayCard(false)
   }
 
   const handleRead=(e)=>{
-    navigate('/thebook')
+    window.location.href="http://www.passuneb.com/elibrary/ebooks/Harry%20Potter%20and%20The%20Sorcerer%E2%80%99s%20Stone.pdf";
   };
 
 if(displayCard){
