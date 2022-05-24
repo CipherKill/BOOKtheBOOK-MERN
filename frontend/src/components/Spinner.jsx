@@ -1,10 +1,11 @@
 import Loading from '../assets/loading.gif'
+import {Container} from 'react-bootstrap'
 
 function Spinner() {
   return (
-      <div>
-          {Loading}
-      </div>
+      <Container className='d-flex justify-content-center mt-5'>
+          <img src={Loading} alt='loading...'/>
+      </Container>
   )
 }
 
