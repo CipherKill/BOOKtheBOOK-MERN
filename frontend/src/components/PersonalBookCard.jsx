@@ -1,17 +1,12 @@
 import {Card,Button} from 'react-bootstrap'
-import Spinner from './Spinner'
+
 
 function BookCard({cover,name,author,genre,rating,bookid}) {
-
-    const isLoading=false;
 
   const handleClick=()=>{
     console.log('click')
   }
 
-  if(isLoading){
-    return <Spinner/>
-  }
 
   return (
     <Card style={{ width: '18rem' }} className='cardstyle'>
