@@ -7,6 +7,7 @@ const myBooksSchema=mongoose.Schema(
             required:true,
             ref:'User'
         },
+        //might need to use reference to an other book collection
         book:{
             type:String,
             required: [true,'Book name required']
