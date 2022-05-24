@@ -9,7 +9,7 @@ A bookstore app that has the following features:
 - Contains both Frontend and Backend
 - .env file included temporarily
 
-##Technologies used##
+## Technologies used ##
 - HTML, CSS, JS
 - React JS (includes redux)
 - Node JS
