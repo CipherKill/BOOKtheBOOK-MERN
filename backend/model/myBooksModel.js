@@ -9,8 +9,9 @@ const myBooksSchema=mongoose.Schema(
         },
         //might need to use reference to an other book collection
         book:{
-            type:String,
-            required: [true,'Book name required']
+            type:mongoose.Schema.Types.ObjectId,
+            required:true,
+            ref:'books'
         },
         status:{
             type:String,

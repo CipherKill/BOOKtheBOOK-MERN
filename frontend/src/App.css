@@ -46,3 +46,7 @@
 .book-area{
     margin:0 2rem;
 }
+
+.mybook-title{
+    border-bottom:3px solid black;
+}

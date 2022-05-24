@@ -30,7 +30,7 @@ function Books() {
         <Row className='my-5'>
           {data.map(dat=>(
             <Col sm={12} md={2} className='d-flex justify-content-center my-5'>
-              <BookCard cover={dat.cover} name={dat.name} author={dat.author} genre={dat.genre} rating={dat.rating} key={dat._id}/>
+              <BookCard cover={dat.cover} name={dat.name} author={dat.author} genre={dat.genre} rating={dat.rating} key={dat._id} bookid={dat._id}/>
             </Col>
           ))}
         </Row>

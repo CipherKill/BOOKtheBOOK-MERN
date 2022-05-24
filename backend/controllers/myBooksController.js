@@ -4,7 +4,7 @@ const User=require('../model/userModel')
 const MyBooks=require('../model/myBooksModel');
 
 //@desc     get my books
-//@route    /api/mybooks
+//@route    /api/mybooks GET
 //@access   Private
 const getMyBooks=asyncHandler(async(req,res)=>{
     //get user using his id
@@ -45,6 +45,9 @@ const addMyBooks=asyncHandler(async(req,res)=>{
 
 //possible wanted getMyBook function controller
 
+//@desc     remove an added book
+//@route    /api/books/:id
+//@access   private
 const deleteMyBooks=asyncHandler(async (req,res)=>{
     const user=await User.findById(req.user.id);
     if(!user){
