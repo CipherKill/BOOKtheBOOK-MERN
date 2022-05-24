@@ -32,10 +32,6 @@ function MyBooks() {
     return <Spinner/>
   }
 
-  // books.map(book=>{
-  //   console.log(book.name)
-  // })
-  // console.log(books[1][0].name)
 
   return (
     <Container fluid>
@@ -43,7 +39,7 @@ function MyBooks() {
       <div className='book-area'>
         <Row className='my-1'>
            {books.map(book=>(
-             <Col sm={12} md={2} className='d-flex justify-content-center'>
+             <Col sm={12} md={4} className='d-flex justify-content-center'>
              <PersonalBookCard cover={book[0].cover} name={book[0].name} author={book[0].author} genre={book[0].genre} rating={book[0].rating} key={book[0]._id} bookid={book[0]._id}/>
            </Col>
            ))}
