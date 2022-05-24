@@ -1,10 +1,12 @@
 import {Card,Button} from 'react-bootstrap'
-
+import {useState} from 'react'
 
 function BookCard({cover,name,author,genre,rating,bookid}) {
 
+    const [toggle,setToggle]=useState(true)
+
   const handleClick=()=>{
-    console.log('click')
+    setToggle(false)
   }
 
 
@@ -16,7 +18,8 @@ function BookCard({cover,name,author,genre,rating,bookid}) {
             <Card.Text className='fs-4'><span className='cardtitle'>By</span> {author}</Card.Text>
             <Card.Text className='fs-4'><span className='cardtitle'>Genre:</span> {genre}</Card.Text>
             <Card.Text className='fs-4'><span className='cardtitle'>Rating:</span> {rating}/5</Card.Text>
-            <Button variant="danger" onClick={handleClick}>Remove</Button>
+            <Button variant="dark" onClick={handleClick}>Read</Button>
+            <Button variant="danger ms-2    " onClick={handleClick}>Remove</Button>
         </Card.Body>
     </Card>
   )

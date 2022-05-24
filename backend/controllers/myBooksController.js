@@ -85,9 +85,15 @@ const getBookDetails=asyncHandler(async(req,res)=>{
     // }
 
     // const book=await Books.findById(req.params.id);
-    const book=await Books.find({user:req.params.id});
+    const books=await MyBooks.find({user:req.params.id});
 
-    res.status(200).json(book);
+    let bookdetails=[];
+    for(let i=0;i<(books.length);i++){
+        bookdetails.push(await Books.find({_id:books[i].book}));
+    }
+
+
+    res.status(200).json(bookdetails);
 });
 
 module.exports={

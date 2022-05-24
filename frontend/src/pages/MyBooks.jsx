@@ -20,6 +20,7 @@ function MyBooks() {
       const response=await fetch(`/api/mybooks/${id}`)
       const data=await response.json()
       setBooks(data)
+      // console.log(data)
       setLoading(false)
   }
 
@@ -31,15 +32,19 @@ function MyBooks() {
     return <Spinner/>
   }
 
+  // books.map(book=>{
+  //   console.log(book.name)
+  // })
+  // console.log(books[1][0].name)
 
   return (
     <Container fluid>
-      <h1 className='text-center my-4 mybook-title'>Here are the list of your added books.</h1>
+      <h1 className='text-center mt-5 mybook-title'>Here are the list of your added books.</h1>
       <div className='book-area'>
-        <Row className='my-5'>
+        <Row className='my-1'>
            {books.map(book=>(
-             <Col sm={12} md={2} className='d-flex justify-content-center my-5'>
-             <PersonalBookCard cover={book.cover} name={book.name} author={book.author} genre={book.genre} rating={book.rating} key={book._id} bookid={book._id}/>
+             <Col sm={12} md={2} className='d-flex justify-content-center'>
+             <PersonalBookCard cover={book[0].cover} name={book[0].name} author={book[0].author} genre={book[0].genre} rating={book[0].rating} key={book[0]._id} bookid={book[0]._id}/>
            </Col>
            ))}
         </Row>
