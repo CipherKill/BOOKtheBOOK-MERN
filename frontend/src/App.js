@@ -7,6 +7,7 @@ import Header from './components/Header'
 import PrimaryMenu from './components/PrimaryMenu'
 import PrivateRoute from './components/PrivateRoute'
 import MyBooks from './pages/MyBooks'
+import Books from './pages/Books'
 
 import 'react-toastify/dist/ReactToastify.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -23,6 +24,7 @@ function App() {
           <Route path='/' element={<Home/>}/>
           <Route path='/register' element={<Register/>}/>
           <Route path='/login' element={<Login/>}/>
+          <Route path='/books' element={<Books/>}/>
           <Route path='/mybooks' element={<PrivateRoute/>}>
             <Route path='/mybooks' element={<MyBooks/>}/>
           </Route>

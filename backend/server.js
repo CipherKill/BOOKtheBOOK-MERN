@@ -16,6 +16,7 @@ app.use(express.urlencoded({extended: false}));
 //routes
 app.use('/api/users',require('./routes/userRoutes'));
 app.use('/api/mybooks',require('./routes/myBooksRoutes'));
+app.use('/api/books',require('./routes/booksRoutes'));
 
 //api testing route ONLY
 app.get('/',(req,res)=>{

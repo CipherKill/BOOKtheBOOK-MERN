@@ -27,3 +27,22 @@
     background-color:grey;
     color:black;
 }
+
+.cardtitle{
+    font-weight:700;
+    font-size:1.2rem;
+}
+
+.cardbody{
+    background-color:lightgrey;
+    /* border-radius: 2rem; */
+}
+
+.btitle{
+    font-weight: bold;
+    border-bottom:1px solid black;
+}
+
+.book-area{
+    margin:0 2rem;
+}
