@@ -1,5 +1,7 @@
 body{
     background-color:rgb(223, 223, 223);
+    margin:0;
+    padding:0;
 }
 
 .router-link{
@@ -71,4 +73,8 @@ body{
 .smenu{
     font-size:1.5rem;
     text-transform:uppercase;
+}
+
+.finger{
+    cursor:pointer;
 }
