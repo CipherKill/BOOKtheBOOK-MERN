@@ -8,7 +8,6 @@ import Spinner from '../components/Spinner'
 
 function BookCard({cover,name,author,genre,rating,bookid}) {
 
-  // const {user}=useSelector(state=>state.auth);
   const {isError,isSuccess,isLoading,message}=useSelector(state=>state.mybooks);
 
   const dispatch=useDispatch();
@@ -19,10 +18,8 @@ function BookCard({cover,name,author,genre,rating,bookid}) {
       toast.error(message)
     }
     if(isSuccess){
-      // dispatch(reset())
       navigate('/books')
     }
-    // dispatch(reset())
   },[dispatch,isError,isSuccess,navigate,message]);
 
   const handleClick=()=>{

@@ -1,6 +1,6 @@
 import {useState,useEffect} from 'react'
 import {Container,Form,Button} from 'react-bootstrap'
-import {FaSignInAlt, FaSignOutAlt, FaUser} from 'react-icons/fa'
+import {FaUser} from 'react-icons/fa'
 import {toast} from 'react-toastify'
 import {useSelector,useDispatch} from 'react-redux'
 import {register,reset} from '../features/auth/authSlice'
@@ -71,7 +71,6 @@ function Register() {
         <Container>
             <Form onSubmit={onSubmit}>
                 <Form.Group className='mb-3' controlId='forName'>
-                    {/* <Form.Label>Name</Form.Label> */}
                     <Form.Control 
                         type='text' 
                         placeholder='Enter name' 
@@ -82,7 +81,6 @@ function Register() {
                     />
                 </Form.Group>
                 <Form.Group className='mb-3' controlId='forEmail'>
-                    {/* <Form.Label>Email</Form.Label> */}
                     <Form.Control
                         type='email'
                         name='email'
@@ -93,7 +91,6 @@ function Register() {
                     />
                 </Form.Group>
                 <Form.Group className='mb-3' controlId='forPass'>
-                    {/* <Form.Label>Password</Form.Label> */}
                     <Form.Control
                         type='password'
                         name='password'
@@ -104,7 +101,6 @@ function Register() {
                     />
                 </Form.Group>
                 <Form.Group className='mb-3' controlId='forCPass'>
-                    {/* <Form.Label>Confirm Password</Form.Label> */}
                     <Form.Control
                         type='password'
                         name='password2'

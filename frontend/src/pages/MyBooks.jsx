@@ -8,7 +8,6 @@ import {useSelector} from 'react-redux'
 function MyBooks() {
 
     const [isLoading,setLoading]=useState(true);
-    // const [data,setData]=useState([]);
     const [books,setBooks]=useState([]);
 
     const {user}=useSelector(state=>state.auth);
@@ -20,7 +19,6 @@ function MyBooks() {
       const response=await fetch(`/api/mybooks/${id}`)
       const data=await response.json()
       setBooks(data)
-      // console.log(data)
       setLoading(false)
   }
 

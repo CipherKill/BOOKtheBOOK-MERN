@@ -5,7 +5,6 @@ import {toast} from 'react-toastify'
 import {useSelector,useDispatch} from 'react-redux'
 import {login,reset} from '../features/auth/authSlice'
 import {useNavigate} from 'react-router-dom'
-import Spinner from '../assets/loading.gif'
 
 function Login() {
     const [formData,setFormData]=useState({
@@ -56,7 +55,6 @@ function Login() {
         <Container>
             <Form onSubmit={onSubmit}>
                 <Form.Group className='mb-3' controlId='forEmail'>
-                    {/* <Form.Label>Email</Form.Label> */}
                     <Form.Control
                         type='email'
                         name='email'
@@ -67,7 +65,6 @@ function Login() {
                     />
                 </Form.Group>
                 <Form.Group className='mb-3' controlId='forPass'>
-                    {/* <Form.Label>Password</Form.Label> */}
                     <Form.Control
                         type='password'
                         name='password'
