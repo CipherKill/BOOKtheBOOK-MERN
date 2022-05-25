@@ -2,6 +2,7 @@ import {Container,Form,Button,Row,Col} from 'react-bootstrap'
 import {useState} from 'react'
 import Spinner from '../components/Spinner'
 import MasterCard from '../components/MasterCard';
+// import BookCard from '../components/BookCard';
 
 function SearchBook() {
 
@@ -52,7 +53,7 @@ function SearchBook() {
             <Row className='mt-5'>
                 {data.map(book=>(
                     <Col md={3} sm={12} className='d-flex justify-content-center'>
-                        <MasterCard cover={book.cover} name={book.name} author={book.author} rating={book.rating} genre={book.genre} key={book._id}/>
+                        <MasterCard cover={book.cover} name={book.name} author={book.author} rating={book.rating} genre={book.genre} key={book._id} bookid={book._id}/>
                     </Col>
                 ))}
             </Row>

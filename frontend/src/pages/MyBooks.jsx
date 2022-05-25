@@ -20,6 +20,8 @@ function MyBooks() {
       setLoading(false)
   }
 
+  const reloadpage=()=>window.location.reload();
+
   useEffect(()=>{
       getSavedBooks()
   })
@@ -31,6 +33,7 @@ function MyBooks() {
   return (
     <Container fluid>
       <h1 className='text-center mt-5 mybook-title'>Here are the list of your added books.</h1>
+      <p className='text-center'>Something seems off?, click <span className='mybook-fix' onClick={reloadpage}>here</span> to fix</p>
       <div className='book-area'>
         <Row className='my-1'>
            {books.map(book=>(
