@@ -45,7 +45,6 @@ const addMyBooks=asyncHandler(async(req,res)=>{
     res.status(201).json(bookData);
 });
 
-//possible wanted getMyBook function controller
 
 //@desc     remove an added book
 //@route    /api/books/:id
@@ -56,19 +55,19 @@ const deleteMyBooks=asyncHandler(async (req,res)=>{
         res.status(400);
         throw new Error('User not found');
     }
-    const book=await MyBooks.findById(req.params.id);
-
-    if(!book){
+    const book=await MyBooks.find({book:req.params.id,user:req.user.id});
+    const abook=book[0]
+    if(!abook){
         res.status(400);
         throw new Error('Book not found');
-    }
-
-    if(book.user.toString()!==req.user.id){
+    }    
+    if(abook.user.toString()!==req.user.id){
+        console.log('user nomatched')
         res.status(400);
         throw new Error('Not Authorized');
     }
 
-    await book.remove()
+    await abook.remove()
 
     res.status(200).json({success:true});
 });
@@ -77,14 +76,6 @@ const deleteMyBooks=asyncHandler(async (req,res)=>{
 //@route    /api/mybooks GET
 //@access   Private
 const getBookDetails=asyncHandler(async(req,res)=>{
-    //get user using his id
-    // const user=await User.findById(req.user.id);
-    // if(!user){
-    //     res.status(400);
-    //     throw new Error('User not found');
-    // }
-
-    // const book=await Books.findById(req.params.id);
     const books=await MyBooks.find({user:req.params.id});
 
     let bookdetails=[];

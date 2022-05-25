@@ -1,12 +1,30 @@
 import {Card,Button} from 'react-bootstrap'
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
+import {useSelector,useDispatch} from 'react-redux'
+import {deleteMyBook} from '../features/mybooks/myBookSlice'
+import { toast } from 'react-toastify'
 
 function BookCard({cover,name,author,genre,rating,bookid}) {
 
     const [displayCard,setDisplayCard]=useState(true)
+    const {isSuccess,isError,message}=useSelector(state=>state.mybooks)
 
-  const handleClick=(e)=>{
-    setDisplayCard(false)
+    const dispatch=useDispatch()
+
+    useEffect(()=>{
+      if(isError){
+        toast.error(message)
+      }
+      if(isSuccess){
+        window.location.reload()
+      }
+    },[dispatch,isError,isSuccess,message]);
+
+  const handleRemove=async(e)=>{
+    // setDisplayCard(false)
+    console.log('dis[actched')
+    dispatch(deleteMyBook(bookid))
+
   }
 
   const handleRead=(e)=>{
@@ -23,7 +41,7 @@ if(displayCard){
             <Card.Text className='fs-4'><span className='cardtitle'>Genre:</span> {genre}</Card.Text>
             <Card.Text className='fs-4'><span className='cardtitle'>Rating:</span> {rating}/5</Card.Text>
             <Button variant="dark" onClick={handleRead}>Read</Button>
-            <Button variant="danger" onClick={handleClick} className='ms-2'>Remove</Button>
+            <Button variant="danger" onClick={handleRemove} className='ms-2'>Remove</Button>
         </Card.Body>
     </Card>
   )

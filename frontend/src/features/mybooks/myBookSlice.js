@@ -12,7 +12,7 @@ const initialState={
 };
 
 //add new book
-export const addMyBook=createAsyncThunk('auth/register',async (booksData,thunkAPI)=>{
+export const addMyBook=createAsyncThunk('mybook/add',async (booksData,thunkAPI)=>{
     try{
         const TOKEN=thunkAPI.getState().auth.user.token;
         return await myBookService.addBook(booksData,TOKEN);
@@ -22,6 +22,18 @@ export const addMyBook=createAsyncThunk('auth/register',async (booksData,thunkAP
         return thunkAPI.rejectWithValue(message);
     }
 });
+
+//delete the book
+export const deleteMyBook=createAsyncThunk('mybook/delete',async(booksData,thunkAPI)=>{
+    try{
+        const TOKEN=thunkAPI.getState().auth.user.token;
+        return await myBookService.deleteBook(booksData,TOKEN)
+    }
+    catch(error){
+        const message=(error.response&&error.response.data&&error.response.data.message) || error.message || error.toString();
+        return thunkAPI.rejectWithValue(message);
+    }
+})
 
 export const bookSlice=createSlice({
     name:'mybooks',
@@ -40,6 +52,18 @@ export const bookSlice=createSlice({
                 state.books=action.payload
             })
             .addCase(addMyBook.rejected,(state,action)=>{
+                state.isLoading=false
+                state.isError=true
+                state.message=action.payload
+            })
+            .addCase(deleteMyBook.pending, state=>{
+                state.isLoading=true
+            })
+            .addCase(deleteMyBook.fulfilled, (state)=>{
+                state.isLoading=false
+                state.isSuccess=true
+            })
+            .addCase(deleteMyBook.rejected, (state,action)=>{
                 state.isLoading=false
                 state.isError=true
                 state.message=action.payload
