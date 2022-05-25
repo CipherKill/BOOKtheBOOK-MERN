@@ -1,6 +1,6 @@
 import CarousalBooks from '../components/CarousalBooks'
 import Books from './Books'
-import {Col,Row} from 'react-bootstrap'
+import {Col,Row,Container} from 'react-bootstrap'
 import {useNavigate} from 'react-router-dom'
 
 import ad1 from '../assets/leftpic.jpg'
@@ -12,7 +12,7 @@ function Home() {
   const handleClick=()=>navigate('/books');
 
   return (
-    <>
+    <Container fluid>
         <h1 className='text-center h1 my-4 fw-bold'>Welcome to  BOOKtheBOOK</h1>
         <CarousalBooks/>
         <Row className='mt-5 pop' onClick={handleClick}>
@@ -24,7 +24,7 @@ function Home() {
           </Col>
         </Row>
         <Books/>
-    </>
+    </Container>
   )
 }
 

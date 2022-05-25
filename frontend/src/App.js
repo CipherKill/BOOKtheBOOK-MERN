@@ -8,11 +8,11 @@ import PrimaryMenu from './components/PrimaryMenu'
 import PrivateRoute from './components/PrivateRoute'
 import MyBooks from './pages/MyBooks'
 import Books from './pages/Books'
+import SearchBook from './pages/SearchBook'
 
 import 'react-toastify/dist/ReactToastify.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
-// import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 function App() {
   return (
@@ -25,6 +25,7 @@ function App() {
           <Route path='/register' element={<Register/>}/>
           <Route path='/login' element={<Login/>}/>
           <Route path='/books' element={<Books/>}/>
+          <Route path='/category' element={<SearchBook/>}/>
           <Route path='/mybooks' element={<PrivateRoute/>}>
             <Route path='/mybooks' element={<MyBooks/>}/>
           </Route>
