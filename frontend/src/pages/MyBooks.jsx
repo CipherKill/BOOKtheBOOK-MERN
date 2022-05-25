@@ -2,7 +2,6 @@ import {Container,Row,Col} from 'react-bootstrap'
 import PersonalBookCard from '../components/PersonalBookCard'
 import Spinner from '../components/Spinner'
 import {useState,useEffect} from 'react'
-import axios from 'axios'
 import {useSelector} from 'react-redux'
 
 function MyBooks() {
@@ -15,7 +14,6 @@ function MyBooks() {
 
 
   const getSavedBooks=async()=>{
-      const API_URL='/api/books/'
       const response=await fetch(`/api/mybooks/${id}`)
       const data=await response.json()
       setBooks(data)
@@ -24,12 +22,11 @@ function MyBooks() {
 
   useEffect(()=>{
       getSavedBooks()
-  },[])
+  })
 
   if(isLoading){
     return <Spinner/>
   }
-
 
   return (
     <Container fluid>
