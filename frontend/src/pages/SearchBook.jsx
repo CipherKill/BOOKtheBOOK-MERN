@@ -34,7 +34,7 @@ function SearchBook() {
             <h1 className='display-5 text-center'>Didn't find what you were looking for?</h1>
             <h2 className='text-center mb-5'>Try the searchbar</h2>
             <Form className='text-center' onSubmit={handleSubmit}>
-            <Form.Select aria-label="category_select" className='w-25 d-inline' onChange={handleSelect}>
+            <Form.Select aria-label="category_select" className='w-50 d-inline' onChange={handleSelect}>
                 <option>Select Category</option>
                 <option value="Horror">Horror</option>
                 <option value="Romance">Romance</option>
